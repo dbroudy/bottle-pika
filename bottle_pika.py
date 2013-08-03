@@ -9,7 +9,8 @@ searches for route callbacks that require a `mq` keyword argument
 (configurable) and skips routes that do not. This removes any overhead for
 routes that don't need a message queue.
 
-Results are returned as dictionaries.
+This plugin was originally based on the bottle-mysql plugin found at:
+  https://pypi.python.org/pypi/bottle-mysql
 
 Usage Example::
 
@@ -25,6 +26,10 @@ Usage Example::
     def hello(mq):
         mq.basic_publish(...)
         return HTTPResponse(status=200)
+
+See pika documentation on channels for more information:
+  http://pika.readthedocs.org/en/latest/modules/channel.html#pika.channel.Channel
+
 '''
 
 __version__ = '0.1.0'
